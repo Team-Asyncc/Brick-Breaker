@@ -1,2 +1,2 @@
 # Brick-Breaker
-hackthon-game
+hackathon-game
