@@ -1,18 +1,30 @@
 let currScore = document.querySelector("#score");
 currScore.innerHTML = 0;
 let currLife = document.querySelector("#life");
+let gameover = document.getElementById("gameover");
 
 let life = 3;
 currLife.innerHTML = life;
 
+//music
+let bgmusic = new Audio();
+bgmusic.src = "./audio/backgroundmusic.mp3";
+bgmusic.play();
+bgmusic.volume = 0.6;
+// let brickcollide = new Audio();
+// brickcollide = "./audio/collide.mp3";
+// brickcollide.volume = 0.9;
+
 let canvas = document.getElementById("mycanvas");
 let ctx = canvas.getContext("2d");
 let ballRadius = 10;
+
 //bricks-area
 let x = canvas.width / 2;
 let y = canvas.height - 30;
 
-//Ball Movement
+
+//ball Movement
 let dx = 2;
 let dy = -2;
 
@@ -20,14 +32,14 @@ let dy = -2;
 let paddleHeight = 5;
 let paddleWidth = 100;
 
-//specify starting point of paddle
+//starting point of paddle
 let paddleX = (canvas.width - paddleWidth) / 2;
 
 //holding variables for right and left arrows on keyboard
 let rightPressed = false;
 let leftPressed = false;
 
-//holding variables for bricks structure
+//bricks structure
 let brickRowCount = 6;
 let brickColumnCount = 8;
 let brickWidth = 71;
@@ -36,12 +48,13 @@ let brickPadding = 4;
 let brickOffsetTop = 2;
 let brickOffsetLeft = 2;
 
-//to have a score based on the bricks broken
+//score for broken bricks
 let score = 0;
 
 //arrays for the bricks
 let bricks = [];
-//nested loop for rows and cols of bricks
+
+//setting the loop for rows and cols
 for (i = 0; i < brickColumnCount; i++) {
   bricks[i] = [];
   for (j = 0; j < brickRowCount; j++) {
@@ -49,6 +62,7 @@ for (i = 0; i < brickColumnCount; i++) {
     bricks[i][j] = { x: 0, y: 0, status: 1 };
   }
 }
+
 //track the user actions like mouse movement or keypad arrows < >
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -61,7 +75,8 @@ function mouseMoveHandler(e) {
     paddleX = relativeX - paddleWidth / 2;
   }
 }
-//for the movement through keypad < > arrows
+
+//movement through keypad < > arrows
 function keyDownHandler(e) {
   if (e.keyCode === 39) {
     rightPressed = true;
@@ -84,6 +99,7 @@ function drawBall() {
   ctx.fill();
   ctx.closePath();
 }
+
 //Create a function to create the paddle
 function drawPaddle() {
   ctx.beginPath();
@@ -92,6 +108,7 @@ function drawPaddle() {
   ctx.fill();
   ctx.closePath();
 }
+
 //Create a function to draw the bricks
 function drawBricks() {
   for (c = 0; c < brickColumnCount; c++) {
@@ -114,8 +131,6 @@ function drawBricks() {
 function drawScore() {
   ctx.font = "1.7rem Arial";
   ctx.fillStyle = "#fff";
-  //   ctx.fillText("score: " + score, 8, 20); //position score at 8,20 on the x,y axis of the canvas
-  // currScore += 1;
   currScore.innerHTML = score;
 }
 
@@ -134,6 +149,9 @@ function collisionDetection() {
           dy = -dy;
           b.status = 0;
           score++;
+          // brickcollide.play();
+          // main.volume -= 0.01;
+          // brickcollide.pause();
           // console.log("Score is Incres");
           // currScore.innerHTML = score;
           if (score === brickRowCount * brickColumnCount) {
@@ -145,6 +163,10 @@ function collisionDetection() {
     }
   }
 }
+
+//changing position
+
+// Main Function
 function draw() {
   //clear each instance of the canvas so a new circle can be drawn
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -153,8 +175,10 @@ function draw() {
   drawBall();
   drawPaddle();
   collisionDetection();
+
   //Calculate collision detections
   //left and right walls
+
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx;
   }
@@ -172,18 +196,26 @@ function draw() {
 
       life -= 1;
       currLife.innerHTML = life;
+      drawBall();
+      drawPaddle();
       if (life == 0) {
         currLife.innerHTML = 0;
+        bgmusic.pause();
+        gameover.style.setProperty("z-index", "10");
+        gameover.style.setProperty("display", "block", "important");
+
+        clearInterval(myvar);
         // ! TODO  -- game over page
         // alert('GAMEE OVER')
       }
-      //   document.location.reload();
     }
   }
+
   //bottom wall
   if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
     dy = -dy;
   }
+
   //Make paddle move
   if (rightPressed && paddleX < canvas.width - paddleWidth) {
     paddleX += 7;
@@ -197,4 +229,8 @@ function draw() {
 
 //Create an infinite loop that creates the ball
 //paints the ball on the canvas every 10 milliseconds.
-setInterval(draw, 10);
+
+let myvar = setInterval(draw, 8);
+
+//life jab kam hi rhai
+//audio
