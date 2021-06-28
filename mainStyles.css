@@ -59,19 +59,17 @@ footer {
 }
 
 #mycanvas {
-  border: 2px solid black;
+  border: 2px solid #09946a;
   position: relative;
   top: -10vh;
 }
 
 #gameover {
   display: none;
-  /* z-index: 100; */
+
   position: absolute;
 }
 
-.game-over {
-  height: 100px;
-  width: 100px;
-  background-color: blue;
+#gamebox {
+  display: contents;
 }
