@@ -1,12 +1,18 @@
+# Demo Links
+
+## Live here  [Live Here](https://signifershrey.github.io/Brick-Breaker/)
+
+## Video Demo  [Video](https://drive.google.com/file/d/1i4YiCEH50d1PHKkg_SBxZERh9HQhzY_C/view?usp=sharing)
+
 # Brick Breaker
 Brick Breaker is a game in which a player smashes a wall of bricks by deflecting a bouncing ball with a paddle.A Player can control the game either by mouser or keyboard keys.The player gets 5 lives at the starting and a life is lost if the ball hits the bottom of the screen. 
 We have made this project for the hackathon organised by Devsnest.
 
 ## Screenshots
-![demo1](https://user-images.githubusercontent.com/56041735/123613857-6d0cae00-d821-11eb-9e83-e635b5bfe1a0.png)
+![gamess](https://user-images.githubusercontent.com/35297934/123635998-f6c87580-d839-11eb-83fe-a5da435adf32.png)
 
 
-## Contributing
+## contributors
 
 - [@Rachit Gupta](https://github.com/Rachit-3850)
 - [@Ayush-pandey](https://github.com/ayush-pandey007)
