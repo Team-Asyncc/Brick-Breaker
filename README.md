@@ -3,7 +3,8 @@ Brick Breaker is a game in which a player smashes a wall of bricks by deflecting
 We have made this project for the hackathon organised by Devsnest.
 
 ## Screenshots
-![demo1](https://user-images.githubusercontent.com/56041735/123613857-6d0cae00-d821-11eb-9e83-e635b5bfe1a0.png)
+![gamess](https://user-images.githubusercontent.com/35297934/123629572-0e036500-d832-11eb-945b-8acd800b4f72.png)
+
 
 
 ## Contributing
