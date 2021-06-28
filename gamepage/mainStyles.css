@@ -13,7 +13,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(39, 36, 36);
+  /* background-color: rgb(39, 36, 36); */
+  background-image: url('../images/3.png');
   background-size: cover;
   color: whitesmoke;
   font-family: cursive;
@@ -31,6 +32,7 @@
   padding-top: 1vh;
   font-size: 30px;
   /* color: black; */
+  margin-top: 30px;
   display: flex;
   font-size: 1.7em;
   padding: 0.5em;
@@ -52,18 +54,18 @@
 footer {
   width: 100%;
   height: 5vh;
-  background-color: rgb(128, 126, 124);
+  background-color: #b37bc9;
   text-align: center;
   padding-bottom: 0;
   margin-bottom: 0;
   position: absolute;
   bottom: 0;
   padding: 10px;
-  color: rgb(237, 248, 253);
+  color: rgb(255, 255, 255);
 }
 
 #mycanvas {
-  border: 2px solid #09946a;
+  border: 5px solid #09946a;
   position: relative;
   top: -10vh;
 }

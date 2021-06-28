@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrickBreaker</title>
+    <link rel="stylesheet" href="./mainStyles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Brick-Breaker 🧱⛏</h1>
+      </div>
+
+      <div class="stats">
+        <h3 class="mr">
+          Score :
+          <span id="score"></span>
+        </h3>
+        <h3 class="levels">
+          level🦾 :
+          <span id="level"></span>
+        </h3>
+
+        <h3>
+          🧡 :
+          <span id="life">5</span>
+        </h3>
+      </div>
+      <div id="gameover">
+        <div class="container1">
+          <div class="gameover1">Gameover</div>
+          <!-- <div class="score">Your score is : 0</div> -->
+
+          <button class="button fire" id="playagain">Play Again</button>
+          <button class="button ice" id="quit">Quit</button>
+        </div>
+      </div>
+      <div id="gamebox">
+        <div class="main">
+          <canvas class="game" id="mycanvas" width="600" height="400"></canvas>
+        </div>
+        <footer>
+          <h4>
+            <a href="https://github.com/Team-Asyncc">Made By Async Team</a>
+            🚀🚀
+          </h4>
+        </footer>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

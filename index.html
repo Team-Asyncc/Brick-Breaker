@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BrickBreaker</title>
-    <link rel="stylesheet" href="./mainStyles.css" />
+    <title>Document</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,44 +19,15 @@
   </head>
   <body>
     <div class="container">
-      <div class="header">
-        <h1>Brick-Breaker 🧱⛏</h1>
+      <div class="blockname">
+        <button class="neon-button">Brick Breaker</button>
       </div>
-
-      <div class="stats">
-        <h3 class="mr">
-          Score :
-          <span id="score"></span>
-        </h3>
-        <h3 class="levels">
-          level🦾 :
-          <span id="level"></span>
-        </h3>
-
-        <h3>
-          🧡 :
-          <span id="life">5</span>
-        </h3>
-      </div>
-      <div id="gameover">
-        <div class="container1">
-          <div class="gameover1">Gameover</div>
-          <!-- <div class="score">Your score is : 0</div> -->
-
-          <button class="button fire" id="playagain">Play Again</button>
-          <button class="button ice" id="quit">Quit</button>
-        </div>
-      </div>
-      <div id="gamebox">
-        <div class="main">
-          <canvas class="game" id="mycanvas" width="600" height="400"></canvas>
-        </div>
-        <footer>
-          <h4>Made By Async Team</h4>
-        </footer>
+      <div class="play-button-outer">
+        <button class="button fire" id="Play">Play Now!!</button>
       </div>
     </div>
 
-    <script src="./main.js"></script>
+   
+    <script src="./script.js"></script>
   </body>
 </html>
