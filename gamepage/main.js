@@ -9,8 +9,10 @@ let lvl = 1
 currLife.innerHTML = life
 
 //music
+let collidemusic = new Audio()
+collidemusic.src = '../audio/collide.mp3'
 let bgmusic = new Audio()
-bgmusic.src = './audio/backgroundmusic.mp3'
+bgmusic.src = '../audio/backgroundmusic.mp3'
 bgmusic.play()
 // bgmusic.volume = 0.6;
 
@@ -197,6 +199,7 @@ function collisionDetection() {
           ball.y < b.y + brickHeight
         ) {
           ball.dy = -ball.dy
+          collidemusic.play()
           b.status = 0
           score++
           displayScore++
