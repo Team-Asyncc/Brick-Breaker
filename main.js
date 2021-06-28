@@ -55,6 +55,7 @@ let brickOffsetLeft = 2;
 
 //score
 let score = 0;
+let displayScore = 0;
 
 //array
 let bricks = [];
@@ -132,7 +133,7 @@ function drawBricks() {
 function drawScore() {
   ctx.font = "1.7rem Arial";
   ctx.fillStyle = "#fff";
-  currScore.innerHTML = score;
+  currScore.innerHTML = displayScore;
 }
 // RESET THE BALL
 function resetBall() {
@@ -179,7 +180,7 @@ function levelUp() {
   ball.speed += 1;
   resetBall();
   score = 0;
-  life = 3;
+  // life = 5;
   lvl += 1;
 }
 
@@ -198,6 +199,7 @@ function collisionDetection() {
           ball.dy = -ball.dy;
           b.status = 0;
           score++;
+          displayScore++;
           // console.log("Score is Incres");
           // currScore.innerHTML = score;
           if (score === brickRowCount * brickColumnCount) {
@@ -254,7 +256,7 @@ function draw() {
         document.getElementById("quit").addEventListener("click", () => {
           location.href = "./firstpage/index.html";
         });
-        // ! TODO  -- game over page
+
         // alert('GAMEE OVER')
       }
     }
